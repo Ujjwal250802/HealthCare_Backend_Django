@@ -53,12 +53,9 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-### 5. Create Superuser (Optional)
-```bash
-python manage.py createsuperuser
-```
 
-### 6. Start Development Server
+
+### 5. Start Development Server
 ```bash
 python manage.py runserver
 ```
@@ -162,33 +159,4 @@ healthcare_project/
 ├── mappings/              # Patient-doctor mapping app
 ├── manage.py
 ├── requirements.txt
-└── README.md
 ```
-
-## Admin Panel
-
-Access the Django admin at `http://127.0.0.1:8000/admin/` using your superuser credentials to manage data through a web interface.
-
-## Troubleshooting
-
-### Database Connection Issues
-- Ensure PostgreSQL is running
-- Check database credentials in `.env`
-- Verify database exists
-
-### Migration Issues
-```bash
-python manage.py makemigrations --empty <app_name>
-python manage.py migrate --fake-initial
-```
-
-### Permission Errors
-- Ensure you're sending the JWT token in the Authorization header
-- Check token hasn't expired (60 minutes by default)
-
-## Security Notes
-
-- Never commit `.env` file to version control
-- Use strong SECRET_KEY in production
-- Set DEBUG=False in production
-- Configure proper CORS settings for production
